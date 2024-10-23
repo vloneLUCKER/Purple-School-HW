@@ -2,21 +2,22 @@ import "./App.css";
 import Button from "./Components/Button/Button";
 import Heading from "./Components/Heading/Heading";
 import Paragraph from "./Components/Paragraph/Paragraph";
+import Input from "./Components/Input/Input";
+import Header from "./Components/Header/Header";
 
 function App() {
-  const props = [
-    { text: "Искать" },
-    { text: "Поиск" },
-    {
-      text: "Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.",
-    },
-  ];
+  const clicked = () => {
+    console.log("click");
+  };
+
   return (
-    <>
-      <Heading text={props[1].text} />
-      <Paragraph text={props[2].text} />
-      <Button text={props[0].text} />
-    </>
+    <div className="container">
+      <Header />
+      <Heading text="Поиск" />
+      <Paragraph text="Введите название фильма, сериала или мультфильма для поиска и добавления в избранное." />
+      <Input text={"Введите название"} />
+      <Button text="Искать" clicked={clicked} />
+    </div>
   );
 }
 
