@@ -13,9 +13,11 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <Heading text="Поиск" />
-      <Paragraph text="Введите название фильма, сериала или мультфильма для поиска и добавления в избранное." />
-      <Input text={"Введите название"} />
+      <div className="main-head">
+        <Heading text="Поиск" />
+        <Paragraph text="Введите название фильма, сериала или мультфильма для поиска и добавления в избранное." />
+      </div>
+      <Input text={"Введите название"} svg={"/Left-icon.svg"}></Input>
       <Button text="Искать" clicked={clicked} />
     </div>
   );

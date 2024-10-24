@@ -14,3 +14,27 @@
   line-height: 16px;
   text-align: left;
 }
+
+.search-label {
+  position: relative;
+}
+
+.label-container {
+  width: 200px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+/* .search-svg {
+  margin: 22px 18px;
+}
+
+.input-value {
+  margin-left: 56px;
+
+} */
