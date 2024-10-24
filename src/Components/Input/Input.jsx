@@ -23,7 +23,13 @@ function Input({ text, svg }) {
       <input
         id="search"
         className="input"
-        onChange={inputChange}
+        // onChange={inputChange}
+        onBlur={(e) => {
+          if (e.target.value === "") {
+            setValue(text);
+            setInputSvg(svg);
+          }
+        }}
         onFocus={inputFocus}
       ></input>
     </>
