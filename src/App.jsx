@@ -17,8 +17,13 @@ function App() {
         <Heading text="Поиск" />
         <Paragraph text="Введите название фильма, сериала или мультфильма для поиска и добавления в избранное." />
       </div>
-      <Input text={"Введите название"} svg={"/Left-icon.svg"}></Input>
+      <Input
+        text={"Введите название"}
+        svg={"/Left-icon.svg"}
+        className={"label-svg"}
+      ></Input>
       <Button text="Искать" clicked={clicked} />
+      <Input text={"Ваше имя"}></Input>
     </div>
   );
 }

@@ -17,9 +17,10 @@
 
 .search-label {
   position: relative;
+  display: block;
 }
 
-.label-container {
+.label-svg {
   width: 200px;
   display: flex;
   gap: 18px;
@@ -27,7 +28,13 @@
   justify-content: center;
   position: absolute;
   left: 0px;
-  top: 0px;
+  top: 24px;
+}
+
+.label-container {
+  padding-left: 18px;
+  position: absolute;
+  top: 24px;
 }
 
 /* .search-svg {

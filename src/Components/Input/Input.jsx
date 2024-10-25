@@ -1,7 +1,7 @@
 import "./Input.css";
 import { Children, useState } from "react";
 
-function Input({ text, svg }) {
+function Input({ text, svg, className }) {
   const [value, setValue] = useState(text);
   const [inputSvg, setInputSvg] = useState(svg);
   const inputChange = (e) => {
@@ -11,11 +11,12 @@ function Input({ text, svg }) {
     setValue("");
     setInputSvg("");
   };
+  const styleSvg = className ? className : "label-container";
 
   return (
     <>
       <label htmlFor="search" className="search-label">
-        <div className="label-container">
+        <div className={styleSvg}>
           <img src={inputSvg} alt="" className="search-svg" />
           {value}
         </div>
