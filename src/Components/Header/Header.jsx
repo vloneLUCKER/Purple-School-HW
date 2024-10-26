@@ -9,9 +9,9 @@ function Header() {
       <nav className="nav">
         <a href="">Поиск фильмов</a>
         <a href="">Мои фильмы</a>
-        <a href="">
-          Войти
-          <img src="/Login.svg" alt="" />
+        <a href="" className="enter-container">
+          <span className="enter">Войти</span>
+          <img src="/Login.svg" alt="" className="enter-svg" />
         </a>
       </nav>
     </header>

@@ -13,3 +13,16 @@
   justify-content: space-around;
   color: rgba(168, 174, 191, 1);
 }
+
+.enter-container {
+  position: relative;
+}
+
+.enter {
+  position: absolute;
+}
+
+.enter-svg {
+  position: absolute;
+  left: 52px;
+}

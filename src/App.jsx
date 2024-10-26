@@ -4,6 +4,66 @@ import Heading from "./Components/Heading/Heading";
 import Paragraph from "./Components/Paragraph/Paragraph";
 import Input from "./Components/Input/Input";
 import Header from "./Components/Header/Header";
+import FilmList from "./Components/FilmList/FilmList";
+
+const INITIAL_ITEMS = [
+  {
+    url: "/Shang-Chi.jpg",
+    name: "Black Widow",
+    status: false,
+    rating: 324,
+    id: 1,
+  },
+  {
+    url: "/shang.jpg",
+    name: "Shang Chi",
+    status: false,
+    rating: 124,
+    id: 2,
+  },
+  {
+    url: "/loki.jpg",
+    name: "Loki",
+    status: false,
+    rating: 235,
+    id: 3,
+  },
+  {
+    url: "/meet-mom.jpg",
+    name: "How I Met Your Mother",
+    status: false,
+    rating: 123,
+    id: 4,
+  },
+  {
+    url: "/robbery.jpg",
+    name: "How I Met Your Mother",
+    status: true,
+    rating: 8125,
+    id: 5,
+  },
+  {
+    url: "/friends.jpg",
+    name: "Friends",
+    status: false,
+    rating: 123,
+    id: 6,
+  },
+  {
+    url: "/theory.jpg",
+    name: "The Big Bang Theory",
+    status: false,
+    rating: 12,
+    id: 7,
+  },
+  {
+    url: "/two.jpg",
+    name: "Two And a Half Men",
+    status: false,
+    rating: 456,
+    id: 8,
+  },
+];
 
 function App() {
   const clicked = () => {
@@ -23,7 +83,7 @@ function App() {
         className={"label-svg"}
       ></Input>
       <Button text="Искать" clicked={clicked} />
-      <Input text={"Ваше имя"}></Input>
+      <FilmList INITIAL_ITEMS={INITIAL_ITEMS} />
     </div>
   );
 }

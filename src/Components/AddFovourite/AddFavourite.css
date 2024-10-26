@@ -1,0 +1,19 @@
+.favor-svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  margin-right: 2px;
+  position: absolute;
+}
+
+.favor {
+  display: blcok;
+  height: 24px;
+  position: relative;
+}
+
+.favor-text {
+  top: 4px;
+  position: absolute;
+  left: 42px;
+}
