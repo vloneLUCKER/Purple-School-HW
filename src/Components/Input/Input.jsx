@@ -1,5 +1,6 @@
-import "./Input.css";
+import styles from "./Input.module.css";
 import { Children, useState } from "react";
+import cn from "classnames";
 
 function Input({ text, svg, className }) {
   const [value, setValue] = useState(text);
@@ -15,15 +16,15 @@ function Input({ text, svg, className }) {
 
   return (
     <>
-      <label htmlFor="search" className="search-label">
-        <div className={styleSvg}>
-          <img src={inputSvg} alt="" className="search-svg" />
+      <label htmlFor="search" className={cn(styles["search-label"])}>
+        <div className={cn(styles[`${styleSvg}`])}>
+          <img src={inputSvg} alt="" className={cn(styles["search-svg"])} />
           {value}
         </div>
       </label>
       <input
         id="search"
-        className="input"
+        className={cn(styles["input"])}
         // onChange={inputChange}
         onBlur={(e) => {
           if (e.target.value === "") {

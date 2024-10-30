@@ -1,9 +1,10 @@
-import "./Button.css";
+import styles from "./Button.module.css";
+import cn from "classnames";
 
 // eslint-disable-next-line react/prop-types
 function Button({ text, clicked }) {
   return (
-    <button className="button" onClick={clicked}>
+    <button className={cn(styles["button"])} onClick={clicked}>
       {text}
     </button>
   );

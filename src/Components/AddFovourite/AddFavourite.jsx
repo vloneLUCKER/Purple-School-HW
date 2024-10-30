@@ -1,19 +1,28 @@
-import "./AddFavourite.css";
+import styles from "./AddFavourite.module.css";
+import cn from "classnames";
 
 // eslint-disable-next-line react/prop-types
 function AddFavourite({ status }) {
   if (!status) {
     return (
-      <div className="favor">
-        <img src="/like.svg" alt="" className="favor-svg" />
-        <span className="favor-text purple">В избранное</span>
+      <div className={cn(styles["favor"])}>
+        <img src="/like.svg" alt="" className={cn(styles["favor-svg"])} />
+        <span className={cn(styles["favor-text"], styles["purple"])}>
+          В избранное
+        </span>
       </div>
     );
   }
   return (
-    <div className="favor">
-      <img src="/Bookmark-green.svg" alt="" className="favor-svg" />
-      <span className="favor-text green">В избраном</span>
+    <div className={cn(styles["favor"])}>
+      <img
+        src="/Bookmark-green.svg"
+        alt=""
+        className={cn(styles["favor-svg"])}
+      />
+      <span className={cn(styles["favor-text"], styles["green"])}>
+        В избраном
+      </span>
     </div>
   );
 }

@@ -1,10 +1,11 @@
-import "./App.css";
+import styles from "./App.module.css";
 import Button from "./Components/Button/Button";
 import Heading from "./Components/Heading/Heading";
 import Paragraph from "./Components/Paragraph/Paragraph";
 import Input from "./Components/Input/Input";
 import Header from "./Components/Header/Header";
 import FilmList from "./Components/FilmList/FilmList";
+import cn from "classnames";
 
 const INITIAL_ITEMS = [
   {
@@ -71,9 +72,9 @@ function App() {
   };
 
   return (
-    <div className="container">
+    <div className={cn(styles["container"])}>
       <Header />
-      <div className="main-head">
+      <div className={cn(styles["main-head"])}>
         <Heading text="Поиск" />
         <Paragraph text="Введите название фильма, сериала или мультфильма для поиска и добавления в избранное." />
       </div>
