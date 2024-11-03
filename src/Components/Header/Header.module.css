@@ -26,3 +26,11 @@
   position: absolute;
   left: 52px;
 }
+
+.is-hidden {
+  display: none;
+}
+
+.login-name {
+  margin-right: 40px;
+}

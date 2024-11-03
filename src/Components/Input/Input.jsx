@@ -1,8 +1,8 @@
 import styles from "./Input.module.css";
-import { Children, useState } from "react";
+import { Children, forwardRef, useState } from "react";
 import cn from "classnames";
 
-function Input({ text, svg, className }) {
+const Input = forwardRef(function Input({ text, svg, className }, ref) {
   const [value, setValue] = useState(text);
   const [inputSvg, setInputSvg] = useState(svg);
   const inputChange = (e) => {
@@ -23,6 +23,7 @@ function Input({ text, svg, className }) {
         </div>
       </label>
       <input
+        ref={ref}
         id="search"
         className={cn(styles["input"])}
         // onChange={inputChange}
@@ -36,6 +37,6 @@ function Input({ text, svg, className }) {
       ></input>
     </>
   );
-}
+});
 
 export default Input;
