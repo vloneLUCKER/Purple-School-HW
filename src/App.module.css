@@ -1,0 +1,18 @@
+.container {
+  margin: 0px 120px;
+  max-width: 1200px;
+  margin-bottom: 58px;
+}
+
+.main-head {
+  width: 588px;
+  margin-bottom: 24px;
+}
+
+.green {
+  color: rgba(55, 216, 167, 1);
+}
+
+.purple {
+  color: rgba(123, 110, 246, 1);
+}

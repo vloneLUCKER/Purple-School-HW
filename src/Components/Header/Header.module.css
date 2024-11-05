@@ -1,0 +1,28 @@
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 16px 0px;
+}
+
+.nav {
+  width: 531px;
+  display: flex;
+
+  justify-content: space-around;
+  color: rgba(168, 174, 191, 1);
+}
+
+.enter-container {
+  position: relative;
+}
+
+.enter {
+  position: absolute;
+}
+
+.enter-svg {
+  position: absolute;
+  left: 52px;
+}

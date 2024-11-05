@@ -1,0 +1,17 @@
+body {
+  color: rgba(142, 149, 169, 1);
+  background: rgba(18, 24, 41, 1);
+  background-image: url("/Background.png");
+}
+
+a {
+  color: rgba(142, 149, 169, 1);
+  text-decoration: none;
+
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
