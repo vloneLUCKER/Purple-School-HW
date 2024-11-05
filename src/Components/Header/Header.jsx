@@ -1,19 +1,39 @@
+import { useCallback, useContext, useEffect } from "react";
 import styles from "./Header.module.css";
 import cn from "classnames";
+import { User } from "../../context/user.context";
 
 function Header({ userName, isLogged }) {
+  const { user, setUser } = useContext(User);
+
   const onClick = () => {
     if (isLogged) {
       localStorage.clear();
+      setUser({
+        name: "",
+        isLogged: false,
+      });
     }
   };
 
+  console.log(user);
   let name;
-  if (isLogged) {
+  if (user.isLogged) {
     name = "Выйти";
   } else {
     name = "Войти";
   }
+  useEffect(() => {
+    if (user.isLogged) {
+      name = "Выйти";
+    } else {
+      name = "Войти";
+    }
+    setUser({
+      isLogged: localStorage.getItem("isLogged"),
+      name: localStorage.getItem("name"),
+    });
+  }, [isLogged]);
 
   return (
     <header className={cn(styles["header"])}>
