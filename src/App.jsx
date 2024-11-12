@@ -6,6 +6,9 @@ import Input from "./Components/Input/Input";
 import Header from "./Components/Header/Header";
 import FilmList from "./Components/FilmList/FilmList";
 import cn from "classnames";
+import { useContext, useReducer, useRef, useState } from "react";
+import { loginReducer, INITIAL_CONDITIONS } from "./login.state";
+import { User, UserProvider } from "./context/user.context";
 
 const INITIAL_ITEMS = [
   {
@@ -67,25 +70,59 @@ const INITIAL_ITEMS = [
 ];
 
 function App() {
+  const searchRef = useRef();
+  const loginRef = useRef();
+  const [loginState, dispatchLogin] = useReducer(
+    loginReducer,
+    INITIAL_CONDITIONS
+  );
+  const { isLogged, userName, name } = loginState;
+
   const clicked = () => {
-    console.log("click");
+    if (!searchRef.current.value) {
+      searchRef.current.focus();
+    }
   };
 
+  const onLoginClick = () => {
+    if (!loginRef.current.value) {
+      loginRef.current.focus();
+    } else {
+      dispatchLogin({ type: "LOGIN", payload: loginRef.current.value });
+      // setUser(loginRef.current.value);
+    }
+  };
+
+  console.log(isLogged);
+
   return (
-    <div className={cn(styles["container"])}>
-      <Header />
-      <div className={cn(styles["main-head"])}>
-        <Heading text="Поиск" />
-        <Paragraph text="Введите название фильма, сериала или мультфильма для поиска и добавления в избранное." />
+    <UserProvider>
+      <div className={cn(styles["container"])}>
+        <Header userName={userName} isLogged={isLogged} />
+        <div className={cn(styles["main-head"])}>
+          <Heading text="Поиск" />
+          <Paragraph text="Введите название фильма, сериала или мультфильма для поиска и добавления в избранное." />
+        </div>
+        <section className={cn(styles["search-section"])}>
+          <Input
+            ref={searchRef}
+            text={"Введите название"}
+            svg={"/Left-icon.svg"}
+            className={"label-svg"}
+          ></Input>
+          <Button text="Искать" clicked={clicked} />
+        </section>
+        <FilmList INITIAL_ITEMS={INITIAL_ITEMS} />
+
+        <div className="login-page">
+          <Heading text="Вход" />
+          <div className={cn(styles["input-container"])}>
+            <Input text="Ваше имя" ref={loginRef} />
+            <Button text="Войти в профиль" clicked={onLoginClick} />
+          </div>
+        </div>
       </div>
-      <Input
-        text={"Введите название"}
-        svg={"/Left-icon.svg"}
-        className={"label-svg"}
-      ></Input>
-      <Button text="Искать" clicked={clicked} />
-      <FilmList INITIAL_ITEMS={INITIAL_ITEMS} />
-    </div>
+    </UserProvider>
   );
 }
 
